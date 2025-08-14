@@ -1,0 +1,7 @@
+
+
+# Virtual environment
+venv/
+
+# PDF files (Optional, যদি তুমি GitHub এ রাখতে না চাও)
+*.pdf
