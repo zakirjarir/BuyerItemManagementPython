@@ -4,16 +4,16 @@ from reportlab.lib.pagesizes import A4
 from reportlab.pdfgen import canvas
 from datetime import datetime, timezone, timedelta
 
-# 🛍️ Company Info
+# Company Info
 COMPANY_NAME = 'Zakir Store'
 COMPANY_ADDRESS = 'Pabna, Bangladesh'
 inventory = []
 
-# 🕒 Get Current Time
+#  Get Current Time
 def get_current_time():
     return datetime.now(timezone.utc).astimezone(timezone(timedelta(hours=6))).strftime("%Y-%m-%d %H:%M:%S")
 
-# 📄 PDF Generator
+#  PDF Generator
 def generate_pdf():
     if not inventory:
         messagebox.showwarning("Warning", "No items in inventory!")
@@ -80,7 +80,7 @@ def generate_pdf():
     c.save()
     messagebox.showinfo("Success", f"Invoice saved at:\n{file_path}")
 
-# ➕ Add Item
+# Add Item
 def add_item():
     try:
         name = entry_item.get()

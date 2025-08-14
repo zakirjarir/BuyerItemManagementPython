@@ -2,6 +2,8 @@
 
 # Virtual environment
 venv/
+dist/
+build/
 
 # PDF files (Optional, যদি তুমি GitHub এ রাখতে না চাও)
 *.pdf

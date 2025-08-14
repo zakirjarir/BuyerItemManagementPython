@@ -1,0 +1,73 @@
+==============================
+Zakir Invoice Generator - Build Instructions (Ubuntu)
+==============================
+
+Project Setup:
+--------------
+1. Open terminal and navigate to project folder:
+   cd /path/to/project
+
+2. (Optional) Create and activate a virtual environment:
+   python3 -m venv venv
+   source venv/bin/activate
+
+3. Install required packages:
+   pip install reportlab
+   sudo apt install python3-tk
+
+Running the App Directly:
+------------------------
+python3 main.py
+
+Building Standalone Executable:
+-------------------------------
+1. Install PyInstaller if not already installed:
+   pip install pyinstaller
+
+2. Make sure your app icon is ready (PNG format, 128x128 or 256x256):
+   icon.png in project folder
+
+3. Build the executable using PyInstaller:
+   pyinstaller --onefile --windowed --icon=icon.png --name=ZakirInvoice main.py
+
+Explanation of options:
+----------------------
+--onefile      -> Combines everything into a single executable
+--windowed     -> No console window (for GUI apps)
+--icon=icon.png -> Sets application icon
+--name=ZakirInvoice -> Name of the executable
+
+After Build:
+------------
+- The executable will be in the `dist` folder:
+  dist/ZakirInvoice
+- Run it with:
+  ./dist/ZakirInvoice
+
+Creating Desktop Shortcut (Optional):
+-------------------------------------
+1. Create a `.desktop` file:
+   nano ZakirInvoice.desktop
+
+   Add the following content:
+
+   [Desktop Entry]
+   Name=Zakir Invoice
+   Exec=/home/username/path/to/dist/ZakirInvoice
+   Icon=/home/username/path/to/project/icon.png
+   Terminal=false
+   Type=Application
+
+2. Make it executable:
+   chmod +x ZakirInvoice.desktop
+
+3. Move to desktop or applications folder:
+   mv ZakirInvoice.desktop ~/Desktop/
+
+Now you can launch your app with double-click and see your icon.
+
+Tips:
+-----
+- Make sure your PNG icon is sized correctly (128x128 or 256x256)  
+- Test the executable on the Ubuntu machine to ensure all dependencies are included  
+- PDF invoices are saved at the user-selected location via the save dialog
